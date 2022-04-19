@@ -1,0 +1,31 @@
+{
+    "name": "spotawheel/laravel-rebrandly",
+    "description": "Laravel Rebrandly Package",
+    "keywords": ["laravel", "rebrandly"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chrysostomos Kanoulis",
+            "email": "chrysostomos.kanoulis@spotawheel.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Spotawheel\\Rebrandly\\": "src" 
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spotawheel\\Rebrandly\\RebrandlyServiceProvider"
+            ],
+            "aliases": {
+                "Rebrandly": "Spotawheel\\Rebrandly\\Facades\\Rebrandly"
+            }
+        }
+    },
+    "require": {
+        "php": "^7.3|^8.0",
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
