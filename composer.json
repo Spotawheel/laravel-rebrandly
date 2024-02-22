@@ -3,6 +3,7 @@
     "description": "Laravel Rebrandly Package",
     "keywords": ["laravel", "rebrandly"],
     "license": "MIT",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Chrysostomos Kanoulis",

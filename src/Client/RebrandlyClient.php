@@ -92,4 +92,44 @@ class RebrandlyClient
         return $this->event('GET', $this->api_url . '/account');
     }
 
+    public function deleteLinks(array $linkIds): array
+    {
+        $body = [
+            'links' => $linkIds
+        ];
+
+        $response = $this->event('DELETE', $this->api_url . "/links", $body);
+
+        return json_decode(json_encode($response), true);
+    }
+
+    public function getLinks(
+        string $dateTo = '',
+        string $dateFrom = '',
+        string $lastLinkId = '',
+        int $limit = 25,
+        string $domainId = '',
+        string $domainFullName = '',
+        string $slashtag = '',
+        string $creatorId = '',
+        string $orderBy = 'createdAt',
+        string $orderDir = 'desc'
+    ): array
+    {
+        $query = http_build_query([
+            'limit' => $limit,
+            'domain.id' => $domainId,
+            'domain.fullName' => $domainFullName,
+            'slashtag' => $slashtag,
+            'creator.id' => $creatorId,
+            'orderBy' => $orderBy,
+            'orderDir' => $orderDir,
+            'last' => $lastLinkId,
+            'dateTo' => $dateTo,
+            'dateFrom' => $dateFrom,
+        ]);
+
+        return $this->event('GET', $this->api_url . "/links?$query");
+    }
+
 }
