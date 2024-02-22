@@ -47,6 +47,23 @@ $bool = Rebrandly::deleteLink('2j8ab31');
 
 /* Return account details */
 $object = Rebrandly::accountDetails();
+
+/* Delete links */
+$array = Rebrandly::accountDetails($linksArray);
+
+/* Retrieve links based on filters */
+$array = Rebrandly::getLinks(
+        string $dateTo = '',
+        string $dateFrom = '',
+        string $lastLinkId = '',
+        int $limit = 25,
+        string $domainId = '',
+        string $domainFullName = '',
+        string $slashtag = '',
+        string $creatorId = '',
+        string $orderBy = 'createdAt',
+        string $orderDir = 'desc'
+        );
 ```
 ## Notes ##
 
